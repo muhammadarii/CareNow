@@ -7,41 +7,50 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 // Tipe data Payment
-export type Payment = {
+export type Formulir = {
   id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
+  name: string;
+  treatmentDate: string;
+  treatmentDescription: "Flu" | "Covid-19" | "Headache" | "Stomachache";
+  medicine: "Paracetamol" | "Amoxilin" | "Cetirizine" | "Dexamethasone";
+  healthCosts: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Formulir>[] = [
   {
     accessorKey: "id",
     header: "ID",
   },
   {
-    accessorKey: "amount",
-    header: "Amount",
+    accessorKey: "name",
+    header: "Name",
   },
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "treatmentDate",
+    header: "Treatment Date",
   },
   {
-    accessorKey: "email",
-    header: "Email",
+    accessorKey: "treatmentDescription",
+    header: "Treatment Description",
+  },
+  {
+    accessorKey: "medicine",
+    header: "Medicine",
+  },
+  {
+    accessorKey: "healthCosts",
+    header: "Health Costs",
   },
   {
     id: "actions",
     header: "Actions",
     cell: ({ row }) => {
-      const payment = row.original;
+      const formulir = row.original;
 
       return (
         <DropdownMenu>
@@ -52,15 +61,13 @@ export const columns: ColumnDef<Payment>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => navigator.clipboard.writeText(formulir.id)}
             >
-              Copy payment ID
+              Edit
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
