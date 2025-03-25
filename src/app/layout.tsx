@@ -32,7 +32,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <div className="flex flex-col">
-            <SidebarTrigger />
+            <SidebarTrigger className="lg:hidden" />
             <main className="p-2">{children}</main>
           </div>
         </body>

@@ -44,14 +44,14 @@ export function DataTable<TData, TValue>({
     },
     initialState: {
       pagination: {
-        pageSize: 5, // Menampilkan 5 data per halaman
+        pageSize: 5,
       },
     },
   });
 
   return (
     <div>
-      <div className="rounded-md border w-[1000px]">
+      <div className="rounded-md border w-screen lg:w-[1000px]">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
