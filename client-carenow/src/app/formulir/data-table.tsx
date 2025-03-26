@@ -20,6 +20,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -51,7 +53,17 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <Button variant="default">Add</Button>
+      <div className="flex flex-row items-center justify-start gap-4">
+        <Button variant="default">Add</Button>
+        <div className="flex items-center gap-2 border rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-black">
+          <Search className="text-gray-500" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="focus:outline-none w-full bg-transparent"
+          />
+        </div>
+      </div>
       <div className="rounded-md border w-screen lg:w-[1000px] mt-4">
         <Table>
           <TableHeader>
