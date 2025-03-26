@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Formulir, columns } from "./columns";
+import { columns } from "./columns";
 import { DataTable } from "./data-table";
+import { Formulir } from "@/types";
 
 async function getData(): Promise<Formulir[]> {
   // Fetch data from your API here.

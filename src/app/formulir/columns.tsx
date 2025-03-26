@@ -10,16 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-// Tipe data Payment
-export type Formulir = {
-  id: string;
-  name: string;
-  treatmentDate: string;
-  treatmentDescription: "Flu" | "Covid-19" | "Headache" | "Stomachache";
-  medicine: "Paracetamol" | "Amoxilin" | "Cetirizine" | "Dexamethasone";
-  healthCosts: string;
-};
+import { Formulir } from "@/types";
 
 export const columns: ColumnDef<Formulir>[] = [
   {
